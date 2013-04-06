@@ -1,3 +1,3 @@
 class Chef < ActiveRecord::Base
-  attr_accessible :email, :name
+  attr_accessible :email, :name, :username
 end

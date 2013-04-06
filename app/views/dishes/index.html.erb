@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Price</th>
+    <th>Belongs to</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,9 +14,10 @@
   <tr>
     <td><%= dish.name %></td>
     <td><%= dish.price %></td>
+    <td><%= dish.belongs_to %></td>
     <td><%= link_to 'Show', dish %></td>
     <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-    <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', dish, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

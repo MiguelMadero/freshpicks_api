@@ -1,3 +1,3 @@
 class Dish < ActiveRecord::Base
-  attr_accessible :name, :price
+  attr_accessible :belongs_to, :name, :price
 end

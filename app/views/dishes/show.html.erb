@@ -10,6 +10,11 @@
   <%= @dish.price %>
 </p>
 
+<p>
+  <b>Belongs to:</b>
+  <%= @dish.belongs_to %>
+</p>
+
 
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %>

@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :price %><br />
-    <%= f.number_field :price %>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :belongs_to %><br />
+    <%= f.number_field :belongs_to %>
   </div>
   <div class="actions">
     <%= f.submit %>
