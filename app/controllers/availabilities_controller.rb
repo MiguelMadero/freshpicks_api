@@ -30,6 +30,7 @@ class AvailabilitiesController < ApplicationController
     end
       
   end
+  
 
   # GET /availabilities/new
   # GET /availabilities/new.json
@@ -78,6 +79,13 @@ class AvailabilitiesController < ApplicationController
       end
     end
   end
+
+  # GET /day/2013-04-05.json
+  def day
+
+    
+  end
+  
 
   # DELETE /availabilities/1
   # DELETE /availabilities/1.json
