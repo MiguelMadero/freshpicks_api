@@ -7,7 +7,6 @@ class CreateChefs < ActiveRecord::Migration
       t.string :location
       t.string :bio
       t.string :specialty
-      t.integer :belongs_to
 
       t.timestamps
     end

@@ -7,7 +7,7 @@ class CreateDishes < ActiveRecord::Migration
       t.string :ingredients
       t.string :diet_flags
       t.string :cuisine
-      t.integer :belongs_to
+      t.integer :chef_id
 
       t.timestamps
     end

@@ -4,7 +4,7 @@ class CreateAvailabilities < ActiveRecord::Migration
       t.integer :initial_amount
       t.integer :remaining_amount
       t.date :expires_on
-      t.integer :belongs_to
+      t.integer :dish_id
 
       t.timestamps
     end
