@@ -11,22 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406215842) do
+ActiveRecord::Schema.define(:version => 20130406230548) do
+
+  create_table "availabilities", :force => true do |t|
+    t.integer  "initial_amount"
+    t.integer  "remaining_amount"
+    t.date     "expires_on"
+    t.integer  "belongs_to"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "chefs", :force => true do |t|
     t.string   "name"
-    t.string   "email"
+    t.string   "username"
+    t.float    "rating"
+    t.string   "location"
+    t.string   "bio"
+    t.string   "specialty"
+    t.integer  "belongs_to"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "username"
   end
 
   create_table "dishes", :force => true do |t|
     t.string   "name"
-    t.integer  "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "belongs_to"
+    t.string   "desription"
+    t.float    "price"
+    t.string   "ingredients"
+    t.string   "diet_flags"
+    t.string   "cuisine"
+    t.integer  "belongs_to"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

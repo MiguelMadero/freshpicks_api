@@ -3,7 +3,11 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Desription</th>
     <th>Price</th>
+    <th>Ingredients</th>
+    <th>Diet flags</th>
+    <th>Cuisine</th>
     <th>Belongs to</th>
     <th></th>
     <th></th>
@@ -13,7 +17,11 @@
 <% @dishes.each do |dish| %>
   <tr>
     <td><%= dish.name %></td>
+    <td><%= dish.desription %></td>
     <td><%= dish.price %></td>
+    <td><%= dish.ingredients %></td>
+    <td><%= dish.diet_flags %></td>
+    <td><%= dish.cuisine %></td>
     <td><%= dish.belongs_to %></td>
     <td><%= link_to 'Show', dish %></td>
     <td><%= link_to 'Edit', edit_dish_path(dish) %></td>

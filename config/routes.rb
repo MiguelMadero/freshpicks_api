@@ -1,4 +1,6 @@
 FreshpicksApi::Application.routes.draw do
+  resources :availabilities
+
   resources :dishes
 
 

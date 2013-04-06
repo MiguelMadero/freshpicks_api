@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Initial amount:</b>
+  <%= @availability.initial_amount %>
+</p>
+
+<p>
+  <b>Remaining amount:</b>
+  <%= @availability.remaining_amount %>
+</p>
+
+<p>
+  <b>Expires on:</b>
+  <%= @availability.expires_on %>
+</p>
+
+<p>
+  <b>Belongs to:</b>
+  <%= @availability.belongs_to %>
+</p>
+
+
+<%= link_to 'Edit', edit_availability_path(@availability) %> |
+<%= link_to 'Back', availabilities_path %>
