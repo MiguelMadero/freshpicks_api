@@ -21,6 +21,16 @@ class AvailabilitiesController < ApplicationController
     end
   end
 
+  def today
+    @availabilities = Availability.where("expires_on >= ? and expires_on <= ?", Date.today, Date.tomorrow)
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @availabilities }
+    end
+      
+  end
+
   # GET /availabilities/new
   # GET /availabilities/new.json
   def new

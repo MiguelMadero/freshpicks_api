@@ -1,4 +1,6 @@
 FreshpicksApi::Application.routes.draw do
+  
+  match 'today' => 'availabilities#today'
   resources :availabilities
 
   resources :dishes
