@@ -1,7 +1,7 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :twitter, 'jIKyZpHOanWKwHdmsbEpMg', 'uthhy3pp1x3NgVHOg2FOCHgqHZ5vXGZerkx9RKv60'
+  provider :twitter, 'wVkd7HIQ6TzjlTyupKX82g', 'i7qUneRNMR9K0cTTIDgxJfoXUo3XBLClnqRIed30XM'
   #prod
-  provider :facebook, '281302611962006', '7fc5253af45d9ceb5080de0d653b078e'
+  provider :facebook, '180431175439854', 'bd2d37c3071e15ffdc61d3ab19d6e763'
   #dev
-  #provider :facebook, '321611241245975', '9b4c2a4d642de49ea1c3debb45649d19'
+  #provider :facebook, '510503195684018', '159fcbaa5c258815d2e7d47ee5ef98cf'
 end
