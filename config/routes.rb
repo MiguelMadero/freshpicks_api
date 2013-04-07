@@ -1,6 +1,7 @@
 FreshpicksApi::Application.routes.draw do
   
   match 'today' => 'availabilities#today'
+  match "" => "dishes#index", :as => :root
   match "/" => "dishes#index", :as => :root
 
   #auth routes
