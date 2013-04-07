@@ -1,8 +1,8 @@
 FreshpicksApi::Application.routes.draw do
   
   match 'today' => 'availabilities#today'
-  match "" => "dishes#index", :as => :root
-  match "/" => "dishes#index", :as => :root
+  match '', :to => redirect('/index.html'), :as => :root
+  match '/', :to => redirect('/index.html'), :as => :root
 
   #auth routes
   match "/auth/:provider/callback" => "sessions#create"
