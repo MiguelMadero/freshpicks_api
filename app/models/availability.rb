@@ -3,10 +3,9 @@ class Availability < ActiveRecord::Base
   belongs_to :dish
   
   def to_json(options = {})
-  	include_chefs = { :chef => {} }
-  	include_dish = { :dish => include_chefs }
-  	include_hash = { :include => include_dish }
+  	include_chefs = { :include => { :chef => {} } }
+  	include_dish = { :include => { :dish => include_chefs } }
   	
-  	super(include_hash.merge(options))
+  	super(include_dish.merge(options))
   end
 end
