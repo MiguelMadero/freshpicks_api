@@ -5,5 +5,7 @@
 	<div class="row-fluid thumb-desc">
 		<div class="span8 description"><%= dish.name %></div>
 		<div class="span4 price"><%= "$"+dish.price.to_s %></div>
+
+		<%= link_to "Sell", "/dish/#{dish.id}/availabilities/new", :class => 'btn btn-primary' %>
 	</div>
 </li>
