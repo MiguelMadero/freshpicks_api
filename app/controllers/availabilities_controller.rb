@@ -56,6 +56,8 @@ class AvailabilitiesController < ApplicationController
     @availability.dish = Dish.find(params[:dish_id])
     
     @availability.remaining_amount = @availability.initial_amount
+    @availability.expires_on = Date.today
+    @availability.starts_on = Date.today
     respond_to do |format|
       if @availability.save
         format.html { redirect_to @availability, notice: 'Availability was successfully created.' }
