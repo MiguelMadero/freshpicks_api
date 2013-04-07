@@ -9,6 +9,9 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%=render :partial=>'user_voice'%>
+  <%=render :partial=>'analytics'%>
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
@@ -20,6 +23,30 @@
           <span class="icon-bar"></span>
         </a>
         <a class="brand" href="#">Some Store</a>
+
+        <div class="btn-group pull-right authmenu">
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <% if current_user %>
+              <i class="icon-user"></i> <%= current_user.name %>
+            <% else %>
+              <i class="icon-user"></i> Sign in
+            <% end  %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+
+            <% if current_user %>
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign Out", signout_path %></li>
+            <% else %>
+              <li><%= link_to "Twitter", "/auth/twitter" %></li>
+              <li><%= link_to "Facebook", "/auth/facebook" %></li>
+            <% end %>
+
+          </ul>
+        </div>
+
         <div class="nav-collapse">
           <ul class="nav">
             <li><%= link_to "Other Chefs", chefs_path %></li>
@@ -33,8 +60,23 @@
 
   <div class="container">
     <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
+      <div class="span12 noticespanel">
+        <%if notice %>
+            <div class="alert">
+              <button class="close" data-dismiss="alert">×</button>
+              <%= notice %>
+            </div>
+        <%end%>
+        <%if flash[:error] %>
+            <div class="alert alert-error">
+              <button class="close" data-dismiss="alert">×</button>
+              <%= flash[:error] %>
+            </div>
+        <%end%>
+      </div>
+
+      <div class="span9 maincontent"><%= yield %></div>
+      <div class="span3 sidecontent">
         <h2>About Us</h2>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
