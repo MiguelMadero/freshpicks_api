@@ -22,7 +22,7 @@ class AvailabilitiesController < ApplicationController
   end
 
   def today
-    @availabilities = Availability.where("expires_on >= ? and expires_on <= ?", Date.today, Date.tomorrow)
+    @availabilities = Availability.where("expires_on >= ? and expires_on <= ?", Date.today, Date.tomorrow).order("created_at DESC")
     
     respond_to do |format|
       format.html # index.html.erb
