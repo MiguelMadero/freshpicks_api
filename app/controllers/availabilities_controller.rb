@@ -53,8 +53,9 @@ class AvailabilitiesController < ApplicationController
   # POST /availabilities.json
   def create
     @availability = Availability.new(params[:availability])
-    @dish = Dish.find(params[:dish_id])
+    @availability.dish = Dish.find(params[:dish_id])
     
+    @availability.remaining_amount = @availability.initial_amount
     respond_to do |format|
       if @availability.save
         format.html { redirect_to @availability, notice: 'Availability was successfully created.' }
