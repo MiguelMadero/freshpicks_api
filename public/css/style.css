@@ -1,0 +1,82 @@
+body {
+	
+	font-family: arial;
+	padding-top: 0px;
+}
+.container-fluid {
+
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.strong-txt {
+margin-top: 31px;
+font-weight: bold;
+font-size: 16px;
+}
+
+.header-r {
+height: 84px;
+border-bottom: 2px solid #e2e2e2;
+
+
+}
+
+.stay-left {	
+margin-left: 0 !important;
+}
+
+.description {
+font-size: 13px;
+line-height: 16px;
+font-weight: bold;
+height: 32px;	
+}
+
+.price {
+font-weight: bold;
+font-size: 27px;
+}
+
+.thumb-desc {
+	margin-top: 12px;	
+}
+
+.rating-txt {
+float: right;
+margin-top: 6px;
+font-size: 18px;
+}
+
+.detail {
+	margin-top: 14px;
+font-size: 18px;
+}
+
+.gray {
+	color: #7b7b7b;	
+}
+
+.img-drp {
+background: url("../images/icon-drop-down.png") no-repeat 138px 2px;
+padding-right: 40px;
+}
+
+.img-arw {
+background: url("../images/icon-dir-right.png") no-repeat 96px 33px;
+padding-right: 40px;
+}
+
+.hdr {
+	margin: 20px 0 20px 0;
+}
+
+.single-thumb {
+border-right: 2px solid #e2e2e2;
+padding-right: 25px;
+}
+
+.single-thumb-mob {
+border: none;
+padding-right: 25px;
+}
