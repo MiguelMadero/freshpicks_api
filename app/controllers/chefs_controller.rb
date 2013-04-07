@@ -16,7 +16,7 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => 'clear_layout' } # show.html.erb
       format.json { render json: @chef }
     end
   end

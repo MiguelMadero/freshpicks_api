@@ -12,8 +12,8 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :create, Ascent
-      can [:update, :destroy], Ascent, :user => user
+      #can :create, Ascent
+      #can [:update, :destroy], Ascent, :user => user
     end
   end
 end
