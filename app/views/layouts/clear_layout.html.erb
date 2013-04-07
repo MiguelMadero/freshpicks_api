@@ -11,8 +11,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+ <div class="container">
+    <div class="row">
+      <div class="span12 noticespanel">
+        <%if notice %>
+            <div class="alert">
+              <button class="close" data-dismiss="alert">×</button>
+              <%= notice %>
+            </div>
+        <%end%>
+        <%if flash[:error] %>
+            <div class="alert alert-error">
+              <button class="close" data-dismiss="alert">×</button>
+              <%= flash[:error] %>
+            </div>
+        <%end%>
+      </div>
 
-    <%= yield %>
+      
+    </div>
+  </div>
+
+  <%= yield %>
       
 </body>
 </html>

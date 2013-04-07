@@ -58,9 +58,10 @@ class AvailabilitiesController < ApplicationController
     @availability.remaining_amount = @availability.initial_amount
     @availability.expires_on = Date.today
     @availability.starts_on = Date.today
+
     respond_to do |format|
       if @availability.save
-        format.html { redirect_to @availability.dish.chef, notice: 'Availability was successfully created.' }
+        format.html { redirect_to @availability.dish.chef, notice: 'Awesom.Go feed them!!!.' }
         format.json { render json: @availability, status: :created, location: @availability }
       else
         format.html { render action: "new" }
