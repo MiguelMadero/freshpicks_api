@@ -20,6 +20,10 @@
     <%= f.number_field :remaining_amount %>
   </div>
   <div class="field">
+    <%= f.label :starts_on %><br />
+    <%= f.date_select :starts_on %>
+  </div>
+  <div class="field">
     <%= f.label :expires_on %><br />
     <%= f.date_select :expires_on %>
   </div>
