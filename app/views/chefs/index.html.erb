@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Name</th>
     <th>Username</th>
     <th>Rating</th>
@@ -15,6 +16,7 @@
 
 <% @chefs.each do |chef| %>
   <tr>
+    <td><%= chef.id %></td>
     <td><%= chef.name %></td>
     <td><%= chef.username %></td>
     <td><%= chef.rating %></td>

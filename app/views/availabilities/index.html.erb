@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Initial amount</th>
     <th>Remaining amount</th>
     <th>Starts on</th>
@@ -14,6 +15,7 @@
 
 <% @availabilities.each do |availability| %>
   <tr>
+    <td><%= availability.id %></td>
     <td><%= availability.initial_amount %></td>
     <td><%= availability.remaining_amount %></td>
     <td><%= availability.starts_on %></td>
