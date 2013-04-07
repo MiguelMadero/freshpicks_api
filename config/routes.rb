@@ -7,6 +7,7 @@ FreshpicksApi::Application.routes.draw do
   #auth routes
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
+  match "/dish/:dish_id/availabilities/new" => "availabilities#new", :as => :newavailability
 
   resources :availabilities
   resources :dishes

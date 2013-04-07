@@ -36,6 +36,7 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities/new.json
   def new
     @availability = Availability.new
+    @dish = Dish.find(params[:dish_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -52,7 +53,8 @@ class AvailabilitiesController < ApplicationController
   # POST /availabilities.json
   def create
     @availability = Availability.new(params[:availability])
-
+    @dish = Dish.find(params[:dish_id])
+    
     respond_to do |format|
       if @availability.save
         format.html { redirect_to @availability, notice: 'Availability was successfully created.' }

@@ -24,7 +24,7 @@
 <div class="row-fluid index">
   <div class="span4 single-thumb visible-desktop visible-tablet">
     <div class="thumbnail">
-      <%= image_tag("/images/chefs/"+@chef.username+"/profile.png") %>
+      <%= image_tag("/images/chefs/"+@chef.username+"/360.jpg") %>
     </div>
     <h1><%= @chef.name %></h1>
     <h3><%= @chef.location %></h3>
@@ -33,6 +33,8 @@
     <div class="rating"><img src="/images/Untitled-4_35.png"/><b class="rating-txt">82 reviews</b> </div>
     <p class="detail"><%= @chef.bio %></p>
     
+    <%= link_to "New Dish", "#", :class => 'btn btn-primary' %>
+
   </div>
     
     
@@ -46,6 +48,8 @@
     <div class="rating"><img src="/images/Untitled-4_35.png"/><b class="rating-txt">82 reviews</b> </div>
     <p class="detail"><%= @chef.bio %></p>
     
+
+    <%= link_to "New Dish", "#", :class => 'btn btn-primary' %>
   </div>
     
     
