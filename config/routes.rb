@@ -5,7 +5,6 @@ FreshpicksApi::Application.routes.draw do
 
   resources :dishes
 
-
   resources :chefs
 
 

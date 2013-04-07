@@ -1,37 +1,48 @@
-<h1>Listing dishes</h1>
-
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Desription</th>
-    <th>Price</th>
-    <th>Ingredients</th>
-    <th>Diet flags</th>
-    <th>Cuisine</th>
-    <th>Belongs to</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @dishes.each do |dish| %>
-  <tr>
-    <td><%= dish.id %></td>
-    <td><%= dish.name %></td>
-    <td><%= dish.desription %></td>
-    <td><%= dish.price %></td>
-    <td><%= dish.ingredients %></td>
-    <td><%= dish.diet_flags %></td>
-    <td><%= dish.cuisine %></td>
-    <td><%= dish.chef.name %></td>
-    <td><%= link_to 'Show', dish %></td>
-    <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-    <td><%= link_to 'Destroy', dish, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<%- model_class = Dish -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:desription) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:ingredients) %></th>
+      <th><%= model_class.human_attribute_name(:diet_flags) %></th>
+      <th><%= model_class.human_attribute_name(:cuisine) %></th>
+      <th><%= model_class.human_attribute_name(:chef_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <tr>
+        <td><%= link_to dish.id, dish_path(dish) %></td>
+        <td><%= dish.name %></td>
+        <td><%= dish.desription %></td>
+        <td><%= dish.price %></td>
+        <td><%= dish.ingredients %></td>
+        <td><%= dish.diet_flags %></td>
+        <td><%= dish.cuisine %></td>
+        <td><%= dish.chef_id %></td>
+        <td><%=l dish.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_dish_path(dish), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      dish_path(dish),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Dish', new_dish_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_dish_path,
+            :class => 'btn btn-primary' %>

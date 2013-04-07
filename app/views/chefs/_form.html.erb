@@ -1,41 +1,44 @@
-<%= form_for(@chef) do |f| %>
-  <% if @chef.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@chef.errors.count, "error") %> prohibited this chef from being saved:</h2>
-
-      <ul>
-      <% @chef.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @chef, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :username, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :username, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rating, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rating, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :location, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bio, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :specialty, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :specialty, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_field :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :specialty %><br />
-    <%= f.text_field :specialty %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                chefs_path, :class => 'btn' %>
   </div>
 <% end %>

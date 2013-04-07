@@ -1,45 +1,50 @@
-<%= form_for(@dish) do |f| %>
-  <% if @dish.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
-
-      <ul>
-      <% @dish.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @dish, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :desription, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :desription, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ingredients, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ingredients, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :diet_flags, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :diet_flags, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cuisine, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cuisine, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :chef_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :chef_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :desription %><br />
-    <%= f.text_field :desription %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :ingredients %><br />
-    <%= f.text_field :ingredients %>
-  </div>
-  <div class="field">
-    <%= f.label :diet_flags %><br />
-    <%= f.text_field :diet_flags %>
-  </div>
-  <div class="field">
-    <%= f.label :cuisine %><br />
-    <%= f.text_field :cuisine %>
-  </div>
-  <div class="field">
-    <%= f.label :chef_id %><br />
-    <%= f.number_field :chef_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                dishes_path, :class => 'btn' %>
   </div>
 <% end %>

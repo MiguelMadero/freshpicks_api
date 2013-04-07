@@ -1,37 +1,38 @@
-<%= form_for(@availability) do |f| %>
-  <% if @availability.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@availability.errors.count, "error") %> prohibited this availability from being saved:</h2>
-
-      <ul>
-      <% @availability.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @availability, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :initial_amount, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :initial_amount, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :remaining_amount, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :remaining_amount, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :expires_on, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :expires_on, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dish_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :dish_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :starts_on, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :starts_on, :class => 'date_select' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :initial_amount %><br />
-    <%= f.number_field :initial_amount %>
-  </div>
-  <div class="field">
-    <%= f.label :remaining_amount %><br />
-    <%= f.number_field :remaining_amount %>
-  </div>
-  <div class="field">
-    <%= f.label :starts_on %><br />
-    <%= f.date_select :starts_on %>
-  </div>
-  <div class="field">
-    <%= f.label :expires_on %><br />
-    <%= f.date_select :expires_on %>
-  </div>
-  <div class="field">
-    <%= f.label :dish_id %><br />
-    <%= f.number_field :dish_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                availabilities_path, :class => 'btn' %>
   </div>
 <% end %>
