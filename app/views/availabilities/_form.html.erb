@@ -45,8 +45,8 @@
 		:combined => true,
 		:minute_interval => 15,
 		:time_separator => "",
-		:start_hour => Time.now.hour,
-		:default => Time.new(2013,4, 5, 18,30), 
+		:start_hour => 17,
+		:default => Time.new(2013,4, 7, 18,30), 
 		:class => 'date_select', 
 		:ampm => true 
 	  %>
@@ -58,9 +58,9 @@
       <%= f.time_select :expires_on, 
 						:combined => true,
 						:minute_interval => 15,
-						:start_hour => Time.now.hour + 3,
+						:start_hour => 17,
 						:time_separator => "",
-						:default => Time.new(2013,4,5,20,30), 
+						:default => Time.new(2013,4,7,20,30), 
 						:class => 'date_select', 
 						:ampm => true 
 	  %>
@@ -68,9 +68,10 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :initial_amount, :class => 'control-label' %>
+    <%= f.label "Number of servings", :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :initial_amount, :class => 'number_field' %>
+      <%= f.number_field :initial_amount, :value => 5, 
+						 :class => 'number_field' %>
     </div>
   </div>
 
