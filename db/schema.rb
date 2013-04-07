@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406230548) do
+ActiveRecord::Schema.define(:version => 20130406235812) do
 
   create_table "availabilities", :force => true do |t|
     t.integer  "initial_amount"
     t.integer  "remaining_amount"
     t.date     "expires_on"
-    t.integer  "belongs_to"
+    t.integer  "dish_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20130406230548) do
     t.string   "location"
     t.string   "bio"
     t.string   "specialty"
-    t.integer  "belongs_to"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -41,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130406230548) do
     t.string   "ingredients"
     t.string   "diet_flags"
     t.string   "cuisine"
-    t.integer  "belongs_to"
+    t.integer  "chef_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

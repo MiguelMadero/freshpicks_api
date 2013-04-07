@@ -1,3 +1,5 @@
 class Dish < ActiveRecord::Base
-  attr_accessible :belongs_to, :cuisine, :desription, :diet_flags, :ingredients, :name, :price
+  attr_accessible :cuisine, :desription, :diet_flags, :ingredients, :name, :price
+
+  belongs_to :chef
 end
