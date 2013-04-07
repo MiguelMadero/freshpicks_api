@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     else
       request.user_agent =~ /Mobile|webOS/
     end
-  end
+	end
 
   def prepare_for_mobile
     session[:mobile_param] = params[:mobile] if params[:mobile]
