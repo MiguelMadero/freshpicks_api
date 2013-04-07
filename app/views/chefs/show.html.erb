@@ -24,124 +24,38 @@
 <div class="row-fluid index">
   <div class="span4 single-thumb visible-desktop visible-tablet">
     <div class="thumbnail">
-      <img src="/images/left-img.png">
+      <%= image_tag("/images/chefs/"+@chef.username+"/profile.png") %>
     </div>
-    <h1>Louisa Shafia</h1>
-    <h3>New York</h3>
+    <h1><%= @chef.name %></h1>
+    <h3><%= @chef.location %></h3>
+    <h3><%= @chef.specialty %></h3>
+
     <div class="rating"><img src="/images/Untitled-4_35.png"/><b class="rating-txt">82 reviews</b> </div>
-    <p class="detail">I have a day job at Google as an engineer. My passion is to cook and share the food i make with the other people.</p>
+    <p class="detail"><%= @chef.bio %></p>
     
   </div>
     
     
   <div class="span4 single-thumb-mob visible-phone">
     <div class="thumbnail">
-      <img src="/images/left-img.png">
+      <%= image_tag("/images/chefs/"+@chef.username+"/profile.png") %>
     </div>
-    <h1>Louisa Shafia</h1>
-    <h3>New York</h3>
+    <h1><%= @chef.name %></h1>
+    <h3><%= @chef.location %></h3>
+	<h3><%= @chef.specialty %></h>
     <div class="rating"><img src="/images/Untitled-4_35.png"/><b class="rating-txt">82 reviews</b> </div>
-    <p class="detail">I have a day job at Google as an engineer. My passion is to cook and share the food i make with the other people.</p>
+    <p class="detail"><%= @chef.bio %></p>
     
   </div>
     
     
   <div class="span8">
    <div class="row-fluid">
-    <ul class="thumbnails">
-      <li class="span4">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb1.png" alt="img1"/>                   
-            </article>
-             <div class="row-fluid thumb-desc">
-                <div class="span8 description">Almost Cheeseless Berry Muffins</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-        <li class="span4">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb2.png" alt="img2"/>                   
-            </article>
-            <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-        <li class="span4">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb3.png" alt="img3"/>                   
-            </article>
-              <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-        <li class="span4 stay-left">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb4.png" alt="img4"/>                   
-            </article>
-            <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-        <li class="span4">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb5.png" alt="img5"/>                   
-            </article>
-              <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-           <li class="span4">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb6.png" alt="img6"/>                   
-            </article>
-              <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-        
-         <li class="span4 stay-left">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb1.png" alt="img1"/>                   
-            </article>
-            <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-        <li class="span4">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb2.png" alt="img2"/>                   
-            </article>
-              <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-           <li class="span4">
-          <article class="thumbnail">
-              <img src="/images/chefs/carina/dishes/thumb3.png" alt="img3"/>                   
-            </article>
-              <div class="row-fluid thumb-desc">
-                <div class="span8 description">text here</div>
-                <div class="span4 price">$14</div>
-             </div>
-        </li>
-        
-      
-    </ul>
+	<% if @chef.dishes.any? %>
+	    <ul class="thumbnails">
+	    	<%= render @chef.dishes %>
+     	</ul>
+   <% end %>
 </div>
 
   <footer class="span12">

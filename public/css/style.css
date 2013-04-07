@@ -58,12 +58,12 @@ font-size: 18px;
 }
 
 .img-drp {
-background: url("../images/icon-drop-down.png") no-repeat 138px 2px;
+background: url("../images/icon-drop-down.png") no-repeat 138px 0px;
 padding-right: 40px;
 }
 
 .img-arw {
-background: url("../images/icon-dir-right.png") no-repeat 96px 33px;
+background: url("../images/icon-dir-right.png") no-repeat 96px 29px;
 padding-right: 40px;
 }
 
