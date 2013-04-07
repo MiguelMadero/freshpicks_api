@@ -10,24 +10,7 @@
     </div>  
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :initial_amount, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :initial_amount, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :remaining_amount, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :remaining_amount, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :expires_on, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_select :expires_on, :class => 'date_select' %>
-    </div>
-  </div>
+
 
   <% unless @dish %>
   <div class="control-group">
@@ -37,12 +20,61 @@
     </div>
   </div>
   <%end%>
+
+
+
+<div class="control-group">
+<label class="control-label" for="availability_day">Day Available</label>
+<div class="controls">
+<select name="day" size="7" multiple>
+	<option value="Sunday">Sunday
+	<option value="Monday">Monday
+	<option value="Tuesday">Tuesday
+	<option value="Wednesday">Wednesday
+	<option value="Thursday">Thursday				
+	<option value="Friday">Friday
+	<option value="Saturday">Saturday
+</select>
+</div>
+</div>
+
   <div class="control-group">
     <%= f.label :starts_on, :class => 'control-label' %>
     <div class="controls">
-      <%= f.date_select :starts_on, :class => 'date_select' %>
+      <%= f.time_select :starts_on, 
+		:combined => true,
+		:minute_interval => 15,
+		:time_separator => "",
+		:start_hour => Time.now.hour,
+		:default => Time.new(2013,4, Time.now.day, 18,30), 
+		:class => 'date_select', 
+		:ampm => true 
+	  %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :expires_on, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.time_select :expires_on, 
+						:combined => true,
+						:minute_interval => 15,
+						:start_hour => Time.now.hour + 3,
+						:time_separator => "",
+						:default => Time.new(2013,4,Time.now.day,20,30), 
+						:class => 'date_select', 
+						:ampm => true 
+	  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :initial_amount, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :initial_amount, :class => 'number_field' %>
+    </div>
+  </div>
+
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
