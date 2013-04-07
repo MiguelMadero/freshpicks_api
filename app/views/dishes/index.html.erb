@@ -22,7 +22,7 @@
     <td><%= dish.ingredients %></td>
     <td><%= dish.diet_flags %></td>
     <td><%= dish.cuisine %></td>
-    <td><%= dish.belongs_to %></td>
+    <td><%= dish.chef.name %></td>
     <td><%= link_to 'Show', dish %></td>
     <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
     <td><%= link_to 'Destroy', dish, confirm: 'Are you sure?', method: :delete %></td>

@@ -16,7 +16,7 @@
     <td><%= availability.initial_amount %></td>
     <td><%= availability.remaining_amount %></td>
     <td><%= availability.expires_on %></td>
-    <td><%= availability.belongs_to %></td>
+    <td><%= availability.dish.name %></td>
     <td><%= link_to 'Show', availability %></td>
     <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
     <td><%= link_to 'Destroy', availability, confirm: 'Are you sure?', method: :delete %></td>
