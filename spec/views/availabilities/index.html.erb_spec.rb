@@ -6,12 +6,10 @@ describe "availabilities/index" do
       stub_model(Availability,
         :initial_amount => 1,
         :remaining_amount => 2,
-        :belongs_to => 3
       ),
       stub_model(Availability,
         :initial_amount => 1,
         :remaining_amount => 2,
-        :belongs_to => 3
       )
     ])
   end

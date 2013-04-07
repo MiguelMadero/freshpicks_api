@@ -5,7 +5,6 @@ describe "availabilities/new" do
     assign(:availability, stub_model(Availability,
       :initial_amount => 1,
       :remaining_amount => 1,
-      :belongs_to => 1
     ).as_new_record)
   end
 
